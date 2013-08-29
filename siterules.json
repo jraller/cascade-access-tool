@@ -1,0 +1,77 @@
+[
+	{
+		"name": "Let Marketing edit everything",
+		"assetName": "*",
+		"acls": [
+			{
+				"level": "write",
+				"type": "group",
+				"name": "Marketing"
+			}
+		],
+		"all": "read"
+	},
+	{
+		"name": "Let faculty read their directory",
+		"assetName": "faculty*",
+		"acls": [
+			{
+				"level": "read",
+				"type": "group",
+				"name": "faculty"
+			}
+		]
+	},
+	{
+		"name": "Let the Dean edit their directory",
+		"assetName": "faculty/dean",
+		"acls": [
+			{
+				"level": "write",
+				"type": "user",
+				"name": "dean"
+			}
+		]
+	},
+	{
+		"name": "hide programmatic assets overriding other rules",
+		"action": "override",
+		"assetName": "*.txt",
+		"acls": [
+			{
+				"level": "write",
+				"type": "group",
+				"name": "IT"
+			}
+		],
+		"all": "none"
+	},
+	{
+		"name": "protect internal assets",
+		"action": "override",
+		"assetName": "_internal*",
+		"all": "none"
+	},
+	{
+		"name": "event",
+		"pageContentType": "event",
+		"acls": [
+			{
+				"level": "write",
+				"type": "group",
+				"name": "externalRelations"
+			},
+			{
+				"level": "read",
+				"type": "group",
+				"name": "IT"
+			},
+			{
+				"level": "read",
+				"type": "group",
+				"name": "marketing"
+			}
+		],
+		"all": "write"
+	}
+]

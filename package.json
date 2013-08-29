@@ -1,0 +1,22 @@
+{
+  "name": "cascade-access-tool",
+  "version": "0.1.0",
+  "description": "Rules engine for applying access changes to a Cascade Server site via web services",
+  "main": "access-report.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jraller/cascade-access-tool.git"
+  },
+  "author": "Jason Aller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jraller/cascade-access-tool/issues"
+  },
+  "dependencies": {
+    "soap-cascade": "0.0.4",
+    "prompt": "~0.2.11"
+  }
+}
