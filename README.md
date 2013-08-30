@@ -3,6 +3,7 @@ Cascade Access Tool
 
 **Caution**: these tools will allow you to make changes to your [Cascade Server](http://www.hannonhill.com/). 
 They will allow you to make site wide changes to all of your assets. 
+Used correctly they will save you countless hours of manual labor; used incorrectly they cost you hours of manual labor.
 As such you should: 
 * review the code
 * review [access rights](http://www.hannonhill.com/kb/Access-Rights/)
