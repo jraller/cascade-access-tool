@@ -4,17 +4,22 @@ Cascade Access Tool
 **Caution**: these tools will allow you to make changes to your [Cascade Server](http://www.hannonhill.com/). 
 They will allow you to make site wide changes to all of your assets. 
 Used correctly they will save you countless hours of manual labor; used incorrectly they cost you hours of manual labor.
+
 As such you should: 
 * review the code
 * review [access rights](http://www.hannonhill.com/kb/Access-Rights/)
 * start with `node access-report.js`, document the current settings for your site
-* make your own `siterules.json` files for each site you will work with
-* run the tool with `node access-engine.js` against your **test** server with a full copy of the data restored from your production server before pointing it at your production server
-* use `node access-report.js` to review the changes that were made and verify that it is applying the rules you think you wrote
-* only when you are happy with the results on your test server and feel you understand what is being done should you use `node access-engine.js` on your production server
+* make your own version of `siterules.json` files for each site you will work with
+* run the tool with `node access-engine.js` against your **test** server with a full copy of the data 
+restored from your production server before pointing it at your production server
+* use `node access-report.js` to review the changes that were made and verify that it is 
+applying the rules you think you wrote
+* only when you are happy with the results on your test server and feel you understand what is 
+being done should you use `node access-engine.js` on your production server
 
 Once either tool is run it will prompt you for:
-* a server to connect to -- should be in the format of http:// or https:// followed by your server name and port if needed.
+* a server to connect to -- should be in the format of http:// or https:// followed by your server 
+name and port if needed.
 * a username to connect with. The username needs edit rights to all of the assets it will be attempting to change.
 * a password
 * a site name
@@ -34,11 +39,13 @@ The outer wrapper should be an array. Within that appear the rules as objects.
 
 `"name":` entries are for documentation and debugging purposes.
 
-`"action":` entries with the value of "override" change the mode of the rule. Once set other non-override rules will not apply to matching objects.
+`"action":` entries with the value of "override" change the mode of the rule. Once set other 
+non-override rules will not apply to matching objects.
 
 `"assetName":` entries will match asset names and paths and allow the use of wildcards `*`.
 
-`"pageContentType":` entries only work with page assets. It allows matching based on the page Content Type. This can be used alone, or in combination with assetName.
+`"pageContentType":` entries only work with page assets. It allows matching based on the page 
+Content Type. This can be used alone, or in combination with assetName.
 
 `"all":` entries support the following values `"none"`, `"read"`, and `"write"`
 
@@ -134,7 +141,8 @@ acl objects need values supplied for `"level"`, `"type"`, and `"name"`.
 
 ## Installation Notes
 
-You will need NodeJS installed. In order to install the dependencies you may need to install a complier based on your operating system.
+You will need [NodeJS](http://nodejs.org/) installed. It appears to install easily under Linux, 
+but Windows users may need to install Python 2.7 and a complier. The free Visual Studio from Microsoft works.
 
 Once you have cloned a copy of this on your workstation change directory to it and `npm install`. 
 This should install both prompt and soap-cascade.
