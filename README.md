@@ -146,3 +146,7 @@ but Windows users may need to install Python 2.7 and a complier. The free Visual
 
 Once you have cloned a copy of this on your workstation change directory to it and `npm install`. 
 This should install both prompt and soap-cascade.
+
+## Release History
+
+* 2013-09-17 version 0.1.0 launched at Cascade Server Users Conference #csuc13
