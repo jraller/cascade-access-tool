@@ -16,7 +16,7 @@
     "url": "https://github.com/jraller/cascade-access-tool/issues"
   },
   "dependencies": {
-    "soap-cascade": "0.0.4",
+    "soap-cascade": "~0.1.0",
     "prompt": "~0.2.11"
   }
 }
