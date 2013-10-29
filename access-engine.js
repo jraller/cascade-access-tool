@@ -419,22 +419,30 @@ function readAccess(args, path, type, depth, metadata, contentType) {
 					needToUpdate = true;
 				} else {
 					if (accessRightsInformation.aclEntries.aclEntry) {
-						// check existing acls for missing in new
-						accessRightsInformation.aclEntries.aclEntry.forEach(function (entry) {
-							if (!findByMatchingProperties(newArgs.accessRightsInformation.aclEntries.aclEntry, entry)[0]) {
-								console.log(repeat(' ', depth * 2) + 'REMOVING ' + entry.name);
-								needToUpdate = true;
-							}
-						});
+						if (newArgs.accessRightsInformation.aclEntries.aclEntry) {
+							// check existing acls for missing in new
+							accessRightsInformation.aclEntries.aclEntry.forEach(function (entry) {
+								if (!findByMatchingProperties(newArgs.accessRightsInformation.aclEntries.aclEntry, entry)[0]) {
+									console.log(repeat(' ', depth * 2) + 'REMOVING ' + entry.name);
+									needToUpdate = true;
+								}
+							});
+						} else {
+							needToUpdate = true;
+						}
 					}
 					if (newArgs.accessRightsInformation.aclEntries.aclEntry) {
-						// check new for additions to existing
-						newArgs.accessRightsInformation.aclEntries.aclEntry.forEach(function (entry) {
-							if (!findByMatchingProperties(accessRightsInformation.aclEntries.aclEntry, entry)[0]) {
-								console.log(repeat(' ', depth * 2) + 'ADDING ' + entry.name);
-								needToUpdate = true;
-							}
-						});
+						if (accessRightsInformation.aclEntries.aclEntry) {
+							// check new for additions to existing
+							newArgs.accessRightsInformation.aclEntries.aclEntry.forEach(function (entry) {
+								if (!findByMatchingProperties(accessRightsInformation.aclEntries.aclEntry, entry)[0]) {
+									console.log(repeat(' ', depth * 2) + 'ADDING ' + entry.name);
+									needToUpdate = true;
+								}
+							});
+						} else {
+							needToUpdate = true;
+						}
 					}
 				}
 				if (needToUpdate) {
