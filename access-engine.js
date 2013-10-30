@@ -60,14 +60,14 @@ var nextList = [],
 			message: 'Server'.grey + ':'.white,
 			validator: /^https?:\/\/(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?$/,
 			warning: 'Should be in the form of http:\/\/cms.your.org with an optional port https:\/\/cms.your.org:8080',
-			'default': 'https:\/\/cascade.yoursite.edu'
+			'default': 'http:\/\/csuc13.cascadeserver.com'
 		},
 		{
 			name: 'username',
 			message: 'Username'.grey + ':'.white,
 			validator: /^[a-zA-Z\s\-]+$/,
 			warning: 'Username must be only letters, spaces, or dashes',
-			'default': 'username'
+			'default': 'jraller'
 		},
 		{
 			name: 'password',
@@ -77,7 +77,7 @@ var nextList = [],
 		{
 			name: 'site',
 			message: 'Cascade Server Site'.grey + ':'.white,
-			'default': 'siteName'
+			'default': 'Jason'
 		},
 		{
 			name: 'rootPath',
@@ -87,7 +87,7 @@ var nextList = [],
 		{
 			name: 'rulesFileName',
 			message: 'Which rules file'.grey + ':'.white,
-			'default': 'siterules.json'
+			'default': 'Jason.json'
 		}
 	],
 	accessLevels = [
